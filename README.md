@@ -1,21 +1,19 @@
-# WordBuckets
+# Word Buckets
 
-**TODO: Add description**
+Write a function that divides a phrase into word buckets, with each bucket
+containing n or fewer characters. Only include full words inside each bucket.
 
-## Installation
+## Examples
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `word_buckets` to your list of dependencies in `mix.exs`:
+See doctests in `WordBuckets`.
 
-```elixir
-def deps do
-  [
-    {:word_buckets, "~> 0.1.0"}
-  ]
-end
-```
+## Notes
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/word_buckets](https://hexdocs.pm/word_buckets).
-
+* Spaces count as one character.
+* Trim beginning and end spaces for each word bucket (see final example).
+* If buckets are too small to hold a single word, return an empty array: []
+* The final goal isn't to return just the words with a length equal (or lower)
+  to the given n, but to return the entire given phrase bucketized (if
+  possible). So, for the specific case of "by" the only word with a proper
+  length, the phrase can't be bucketized, and the returned array has to be
+  empty.
